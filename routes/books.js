@@ -13,8 +13,13 @@ const addBook = require('../views/addBook');
 router.get('/', async (req, res, next) => {
   try {
     const bookData = await Book.findAll({
-      include: Author,
+      include: [
+        {
+          model: Author,
+        },
+      ],
     });
+    console.log(bookData);
 
     res.send(bookList(bookData));
   } catch (error) {

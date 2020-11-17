@@ -20,7 +20,7 @@ module.exports = (book) => {
             <p>
               ${book.title}
               <br />
-              <small>(by ${book.author})</small>
+              <small>(by ${book.author.name})</small>
             </p>
             <small> Rating: ${book.rating} ⭑ </small>
             <p>${book.content}</p>
