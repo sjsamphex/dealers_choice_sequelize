@@ -5,7 +5,6 @@ const html = require('html-template-tag');
 const bookList = require('../views/bookList');
 const bookDetails = require('../views/bookDetails');
 const addBook = require('../views/addBook');
-const SQL = require('sql-template-strings');
 
 // express.static('./');
 // router.use(express.static('public'));
@@ -13,7 +12,7 @@ const SQL = require('sql-template-strings');
 
 router.get('/', async (req, res, next) => {
   try {
-    const data = await client.query(SQL`SELECT * FROM books`);
+    const data = await client.query(`SELECT * FROM books`);
     const books = data.rows;
 
     res.send(bookList(books));
@@ -28,7 +27,7 @@ router.get('/add', (req, res) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const booklistquery = await client.query(SQL`SELECT count(*) FROM books`);
+    const booklistquery = await client.query(`SELECT count(*) FROM books`);
     const bookcount = booklistquery.rows[0].count;
     const newbookid = parseInt(bookcount) + 1;
     const rating = Math.floor(Math.random() * 5) + 1;
@@ -48,13 +47,13 @@ router.post('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   let id = req.params.id;
   try {
-    const booklistquery = await client.query(SQL`SELECT count(*) FROM books`);
+    const booklistquery = await client.query(`SELECT count(*) FROM books`);
     const booklistlength = booklistquery.rows[0].count;
-    if (id > booklistlength) {
-      id = id % booklistlength;
+    if (id >= booklistlength) {
+      id = 1;
     }
 
-    const data = await client.query(SQL`SELECT * FROM books WHERE id=$1`, [id]);
+    const data = await client.query(`SELECT * FROM books WHERE id=$1`, [id]);
     const [book] = data.rows;
 
     res.send(bookDetails(book));

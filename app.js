@@ -3,6 +3,8 @@ const app = express();
 //const morgan = require('morgan');
 const fourOhFour = require('./views/404');
 
+const { conn, syncAndSeed } = require('./db/index');
+
 //app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 
@@ -21,8 +23,16 @@ app.use(function (err, req, res, next) {
   res.status(404).send(fourOhFour());
 });
 
-const PORT = process.env.PORT || 3000;
+const init = async () => {
+  try {
+    await conn.authenticate();
+    await syncAndSeed();
 
-app.listen(PORT, () => {
-  console.log(`App listening in port ${PORT}`);
-});
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => console.log(`Listening on port: ${port}`));
+  } catch (ex) {
+    console.log(ex);
+  }
+};
+
+init();
