@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
-//const morgan = require('morgan');
+const morgan = require('morgan');
 const fourOhFour = require('./views/404');
 
 const { conn, syncAndSeed } = require('./db/index');
 
-//app.use(morgan('dev'));
+if (typeof morgan !== 'undefined') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.urlencoded({ extended: false }));
 
 express.static('./');

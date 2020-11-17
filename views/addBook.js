@@ -15,8 +15,8 @@ module.exports = () => html`<!DOCTYPE html>
     <body>
       <div class="book-item">
         <form method="post" action="/books">
-          <label for="name">Author</label>
-          <input type="text" name="name" />
+          <label for="author">Author</label>
+          <input type="text" name="author" />
           <label for="title">Title</label>
           <input type="text" name="title" />
           <br>
