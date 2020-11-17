@@ -1,1 +1,1 @@
-# dealers_choice_pg
+# dealers_choice_sequelize

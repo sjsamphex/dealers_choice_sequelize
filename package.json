@@ -1,38 +1,22 @@
 {
-  "name": "dealers_choice_js",
+  "name": "dealers_choice_sequelize",
   "version": "1.0.0",
-  "description": "node.js and express practice with book list",
+  "description": "",
   "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon app.js",
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "heroku"
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sjsamphex/dealers_choice_js.git"
+    "url": "git+https://github.com/sjsamphex/dealers_choice_sequelize.git"
   },
-  "author": "Samir Jain",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sjsamphex/dealers_choice_js/issues"
+    "url": "https://github.com/sjsamphex/dealers_choice_sequelize/issues"
   },
-  "homepage": "https://github.com/sjsamphex/dealers_choice_js#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "html-template-tag": "^3.2.0",
-    "pg": "^8.4.2",
-    "sql-template-strings": "^2.2.2"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-google": "^0.14.0",
-    "morgan": "^1.10.0"
-  },
-  "engines": {
-    "node": "12.19.0"
-  }
+  "homepage": "https://github.com/sjsamphex/dealers_choice_sequelize#readme"
 }
