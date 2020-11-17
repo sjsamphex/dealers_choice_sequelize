@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const fourOhFour = require('./views/404');
 
 const { conn, syncAndSeed } = require('./db/index');
