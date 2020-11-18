@@ -1,16 +1,3 @@
-// // setting up the node-postgres driver
-// const pg = require('pg');
-
-// const postgresUrl =
-//   process.env.DATABASE_URL || 'postgres://localhost/cat_books';
-// const client = new pg.Client(postgresUrl);
-
-// // connecting to the `postgres` server
-// client.connect();
-
-// // make the client available as a Node module
-// module.exports = client;
-
 //Setting up Sequelize
 const Sequelize = require('sequelize');
 const { STRING, UUID, UUIDV4, INTEGER } = Sequelize;
@@ -103,9 +90,6 @@ const syncAndSeed = async () => {
         'The Cat Encyclopedia is a comprehensive cat compendium that has all the facts about cats and kittens. It’s packed with beautifully photographed profiles of different breeds from the Maine Coon to the Khao Manee and includes information on caring for your own cat. \n This book also offers information on the science and history of house cats. Find out how cats were domesticated and developed into separate breeds, and see their prominence in art, literature, and superstition. A chapter on feline biology focuses on the anatomy of cats – including the nervous system, digestion, and muscles – and also features details on cat senses and coat patterns. \n With comprehensive help on cat care – from preparing for your cat’s arrival and essential equipment to healthcare and training – The Cat Encyclopedia is the perfect guide for cat lovers.',
     }),
   ]);
-
-  // book1.authorId = Aline.id;
-  // await Promise.all([book1.save()]);
 };
 
 module.exports = {
