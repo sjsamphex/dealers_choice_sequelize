@@ -23,9 +23,9 @@ module.exports = (books) => {
                 </div>
                 <div class="book-info">
                   <p>
-                    <span class="news-position">${book.title}. </span>
+                    <span>${book.title}. </span>
                     <br />
-                    <small>(by ${book.author.name})</small>
+                    <small>by ${book.author.name}</small>
                   </p>
                   <small> Rating: ${book.rating} ⭑ </small>
                 </div>

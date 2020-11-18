@@ -57,7 +57,7 @@ const syncAndSeed = async () => {
     Author.create({ name: 'Aline Alexander Newman' }),
     Author.create({ name: 'Jackson Galaxy' }),
     Author.create({ name: 'Andrew Martila' }),
-    Author.create({ name: 'Francesco Marciuliano)' }),
+    Author.create({ name: 'Francesco Marciuliano' }),
     Author.create({ name: 'DK' }),
   ]);
 
